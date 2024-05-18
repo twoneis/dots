@@ -1,0 +1,129 @@
+input {
+    keyboard {
+        xkb {
+            layout ""
+            model ""
+            rules ""
+            variant ""
+        }
+        repeat-delay 600
+        repeat-rate 25
+        track-layout "global"
+    }
+    touchpad {
+        tap
+        natural-scroll
+        accel-speed 0.000000
+    }
+    mouse { accel-speed 0.000000; }
+    trackpoint { accel-speed 0.000000; }
+    tablet { map-to-output "DP-3"; }
+    touch { map-to-output "eDP-1"; }
+    disable-power-key-handling
+}
+output "DP-1" {
+    scale 1.000000
+    transform "normal"
+    position x=0 y=0
+    mode "3440x1440@49.987000"
+}
+output "eDP-1" {
+    scale 1.000000
+    transform "normal"
+    position x=0 y=1200
+    mode "2736x1824@59.959000"
+}
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S.png"
+prefer-no-csd
+layout {
+    gaps 4
+    struts {
+        left 0
+        right 0
+        top 0
+        bottom 0
+    }
+    focus-ring {
+        width 4
+        active-gradient angle=135 from="#31748f" relative-to="window" to="#9ccfd8"
+        inactive-color "#c4a7e7"
+    }
+    border { off; }
+    preset-column-widths {
+        proportion 0.250000
+        proportion 0.500000
+        proportion 0.750000
+    }
+    default-column-width { proportion 0.250000; }
+    center-focused-column "never"
+}
+cursor {
+    xcursor-theme "default"
+    xcursor-size 24
+}
+hotkey-overlay { skip-at-startup; }
+environment
+binds {
+    Mod+B { spawn "firefox"; }
+    Mod+Backspace { close-window; }
+    Mod+Comma { focus-column-left; }
+    Mod+Ctrl+Comma { focus-monitor-left; }
+    Mod+Ctrl+Down { focus-monitor-down; }
+    Mod+Ctrl+E { focus-monitor-up; }
+    Mod+Ctrl+Left { focus-monitor-left; }
+    Mod+Ctrl+O { focus-monitor-down; }
+    Mod+Ctrl+Period { focus-monitor-right; }
+    Mod+Ctrl+Right { focus-monitor-right; }
+    Mod+Ctrl+Up { focus-monitor-up; }
+    Mod+Down { focus-window-down; }
+    Mod+E { focus-window-up; }
+    Mod+F { maximize-column; }
+    Mod+K { center-column; }
+    Mod+Left { focus-column-left; }
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+O { focus-window-down; }
+    Mod+P { consume-window-into-column; }
+    Mod+Period { focus-column-right; }
+    Mod+Plus { set-column-width "+10%"; }
+    Mod+Right { focus-column-right; }
+    Mod+S { spawn "fuzzel" "-I" "-T" "alacritty" "-p" ""; }
+    Mod+Shift+Comma { move-column-left; }
+    Mod+Shift+Ctrl+Comma { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+Down { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+E { move-column-to-monitor-up; }
+    Mod+Shift+Ctrl+Left { move-column-to-monitor-left; }
+    Mod+Shift+Ctrl+O { move-column-to-monitor-down; }
+    Mod+Shift+Ctrl+Period { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
+    Mod+Shift+Ctrl+S { screenshot-window; }
+    Mod+Shift+Ctrl+Up { move-column-to-monitor-up; }
+    Mod+Shift+Down { move-window-down; }
+    Mod+Shift+E { move-window-up; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+Shift+L { spawn "swaylock"; }
+    Mod+Shift+Left { move-column-left; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+O { move-window-down; }
+    Mod+Shift+P { expel-window-from-column; }
+    Mod+Shift+Period { move-column-right; }
+    Mod+Shift+Plus { set-window-height "+10%"; }
+    Mod+Shift+Q { quit; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+S { screenshot; }
+    Mod+Shift+Up { move-window-up; }
+    Mod+T { spawn "alacritty"; }
+    Mod+Up { focus-window-up; }
+    Mod+X { spawn "sh" "-c" "Xwayland & env DISPLAY=:0 i3"; }
+    Mod+Z { switch-preset-column-width; }
+    Print { screenshot-screen; }
+    XF86AudioLowerVolume { spawn "pamixer" "-d" "5"; }
+    XF86AudioRaiseVolume { spawn "pamixer" "-i" "5"; }
+    XF86MonBrightnessDown { spawn "brightnessctl" "-n=10%" "s" "5%-"; }
+    XF86MonBrightnessUp { spawn "brightnessctl" "s" "5%+"; }
+}
+spawn-at-startup "waybar"
+spawn-at-startup "swaybg" "-i" "/nix/store/wvb89085gpflkkww6g9i82ws1yplispc-wallpaper.png" "-m" "fill"
+spawn-at-startup "pamixer" "--set-volume" "0"
+spawn-at-startup "brightnessctl" "s" "50%"
+spawn-at-startup "systemctl" "--user" "restart" "spotifyd.service"
+animations { slowdown 1.000000; }

@@ -1,0 +1,14 @@
+[[language]]
+auto-format = false
+file-types = ["S"]
+language-servers = ["asm-lsp"]
+name = "gas"
+roots = []
+scope = "source.gas"
+
+[language.indent]
+tab-width = 8
+unit = " "
+
+[language-server.asm-lsp]
+command = "asm-lsp"

@@ -1,0 +1,34 @@
+theme = "rose_pine"
+[editor]
+auto-format = true
+color-modes = true
+cursorline = true
+gutters = ["diagnostics", "line-numbers", "diff"]
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+center = ["file-modification-indicator", "read-only-indicator", "file-name"]
+left = ["mode", "spinner", "version-control"]
+right = ["diagnostics", "position"]
+
+[editor.whitespace]
+render = "all"
+
+[keys.normal]
+C-n = "search_next"
+C-t = "search_prev"
+h = "move_char_left"
+n = "move_line_down"
+s = "move_char_right"
+t = "move_line_up"
