@@ -1,9 +1,8 @@
 #!/usr/bin/env fish
 
-set ignore dconf gh ibus mimeapps.list pulse QtProject.conf rizin
-
 set conf_dir $HOME/.config
 set dots_dir (realpath -s (dirname (status filename)))
+set ignore (cat $dots_dir/ignore)
 set dots
 
 echo "Copying from $conf_dir to $dots_dir"
