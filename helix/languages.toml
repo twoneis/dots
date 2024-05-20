@@ -6,6 +6,21 @@ name = "gas"
 roots = []
 scope = "source.gas"
 
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "json"] }
+
+[[language]]
+name = "jsonc"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "jsonc"] }
+
+[[language]]
+name = "c"
+auto-format = true
+formatter = { command = "clang-format", args = ["-style=file"] }
+
 [language.indent]
 tab-width = 8
 unit = " "

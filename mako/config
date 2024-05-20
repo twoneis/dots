@@ -1,0 +1,10 @@
+max-history=20
+font=AlegreyaSans
+background-color=#1f1d2eee
+text-color=#e0def4ff
+border-size=1
+border-color=#31748fff
+border-radius=8
+icons=0
+default-timeout=5000
+max-visible=3
